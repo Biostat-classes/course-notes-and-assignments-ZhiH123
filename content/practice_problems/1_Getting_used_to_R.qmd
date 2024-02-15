@@ -228,6 +228,10 @@ dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
 
+```{r}
+names(sleep)[names(sleep) %in% "BodyWt"] <- "Body_weight"
+```
+
 #### 6
 
 Produce a plot of how *TotalSleep* differs between primates and other
