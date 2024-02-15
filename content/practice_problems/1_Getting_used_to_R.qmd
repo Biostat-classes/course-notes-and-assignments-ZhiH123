@@ -140,6 +140,38 @@ INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Add a new chunk
 by clicking the *Insert Chunk* button on the toolbar or by pressing
 *Ctrl+Alt+I*. Then state what each of these does.
 
+```{r}
+length(x)
+```
+
+This gives the number of items in the list, or how long the list is from
+5 to 11.
+
+```{r}
+max(x)
+```
+
+This gives the maximum number in the list, which is 15
+
+```{r}
+x[x < 10]
+```
+
+This gives all the numbers that are less than 10
+
+```{r}
+x^2
+```
+
+This takes each number in the list and raise it to the power of 2, or
+square it.
+
+```{r}
+x[ x < 12 & x > 7]
+```
+
+This gives the numbers that are greater than 7, but less than 12.
+
 #### 3
 
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND
