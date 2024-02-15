@@ -282,6 +282,20 @@ this imply?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
+```{r}
+plot(TotalSleep ~ BrainWt, sleep)
+```
+
+```{r}
+sleep_fit <- lm(TotalSleep ~ BrainWt, sleep[sleep$BrainWt<1000,])
+summary(sleep_fit)
+```
+
+```{r}
+plot(TotalSleep ~ BrainWt, data = sleep[sleep$BrainWt < 1000, ])
+abline(sleep_fit)
+```
+
 ### EXTRA QUESTIONS
 
 *not required*
