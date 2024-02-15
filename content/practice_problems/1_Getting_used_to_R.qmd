@@ -214,7 +214,12 @@ Info on the dataset is viewable \@
 How many rows does the **sleep** data set have (hint: `?dim`)? What kind
 of data is stored in each variable?
 
-ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+```{r}
+dim(sleep)
+```
+
+62 Rows, 62 is the number of rows and 12 is the number of columns, so
+dim gives the dimension of the table.
 
 #### 5
 
