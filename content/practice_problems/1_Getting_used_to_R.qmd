@@ -177,6 +177,24 @@ This gives the numbers that are greater than 7, but less than 12.
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND
 RUN EACH OF THESE COMMANDS. Then state what each of these does.
 
+```{r}
+-1:2
+```
+
+```{r}
+(-1):2
+```
+
+```{r}
+-(1:2)
+```
+
+The first two give the same outputs where it gives a list of numbers
+from -1 to 2, but the parentheses don't seem to change the command. The
+third one gives a list from 1 to 2, which is just 1,2. but it applies
+what's outside the parentheses to the output, so both numbers become
+negative.
+
 ### Data input, plotting, and tests
 
 You can read in a dataset from the internet following this protocol.
