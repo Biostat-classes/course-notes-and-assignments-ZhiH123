@@ -575,6 +575,50 @@ Primate/Non-Primate; note there are multiple ways to do this!) – use a
 95% confidence interval for the bar \* Predation risk (as a factor!) –
 use 1 standard error for the bar. Note the difference!
 
+```{r}
+sleep$Primate <- revalue(sleep$Primate, c(Y = "Yes", N = "No"))
+sleep$Primate <- relevel(sleep$Primate, "No")
+library(Rmisc)
+sleep_by_primate <- summarySE(sleep, measurevar = "TotalSleep", groupvars = "Primate", na.rm = T)
+
+sleep_by_primate
+```
+
+```{r}
+
+ggplot(sleep_by_primate
+       , aes(x=Primate, y=TotalSleep)) +
+  geom_col(size = 3) +
+  geom_errorbar(aes(ymin=TotalSleep-ci, ymax=TotalSleep+ci), size=1.5) +
+  ylab("Total sleep (hours per day")+ 
+  xlab("Primate?")+ 
+  ggtitle("Sleep across different taxa")
+  
+
+```
+
+Predation risk:
+
+```{r}
+sleep$Predation <- as.factor(sleep$Predation)
+sleep_by_predation <- summarySE(sleep, measurevar = "TotalSleep", 
+                                groupvars = "Predation", na.rm = T)
+
+sleep_by_predation
+
+```
+
+```{r}
+
+ggplot(sleep_by_predation
+       , aes(x=Predation, y=TotalSleep)) +
+  geom_col(size = 3) +
+  geom_errorbar(aes(ymin=TotalSleep-se, ymax=TotalSleep+se), size=1.5) +
+  ylab("Total sleep \n (hours per day)") + 
+  ggtitle("Sleep across different \n predation levels")
+  
+```
+
 ## Estimates and Certainty Concepts
 
 ### 5
