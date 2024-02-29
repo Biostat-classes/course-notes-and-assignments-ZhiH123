@@ -539,6 +539,12 @@ time spent sleeping? Create a histogram to explore this issue. \* Facet
 the graph you created based on whether or not the animal is a primate
 (Primate column). \* Now only graph the data for primates.
 
+```{r}
+ggplot(sleep, aes(x=TotalSleep)) +
+  geom_histogram() +
+  ggtitle("Variation in Total Time Sleeping")
+```
+
 ### 4
 
 Develop a properly-labeled bar graph with error bars to explore how
