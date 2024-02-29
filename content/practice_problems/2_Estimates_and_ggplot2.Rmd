@@ -687,3 +687,6 @@ approach normality. The noted distributions are:
 -   Chi-square(df=4) {low Kurtosis / moderate skewness / single
     truncation}
 -   Binomial distribution (p=.7) {discrete distribution\]
+
+Seems like for all of them, the bigger the sample size, the graph shifts
+to a normal distribution.
