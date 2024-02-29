@@ -625,6 +625,9 @@ ggplot(sleep_by_predation
 
 What does a 95% confidence interval mean?
 
+95% confidence interval means that 95 out of 100 times the true mean
+will be in the range.
+
 ### 6
 
 To make sure you understand the ideas of sampling, confidence intervals,
