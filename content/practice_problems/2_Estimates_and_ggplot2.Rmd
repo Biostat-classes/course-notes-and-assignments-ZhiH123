@@ -523,6 +523,15 @@ order to do this you can use the Primate column or (following class
 code) make a new column called Taxa to represent the information
 (hint:search for “ revalue”). Make sure axes are well-labeled.
 
+```{r}
+  ggplot(sleep, aes(x=BrainWt, y = TotalSleep)) +
+  geom_point(aes(colour=Primate)) +
+  ylab("Total sleep (hours per day)")+
+  xlab("BrainWt (g)")+
+  ggtitle("Total Sleep Decreases with Brain Weight")
+    
+```
+
 ### 3
 
 Let’s work with histograms. \* What type of variation do we see in total
