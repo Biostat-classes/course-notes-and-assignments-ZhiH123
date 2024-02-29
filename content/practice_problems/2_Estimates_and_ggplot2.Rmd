@@ -542,6 +542,28 @@ the graph you created based on whether or not the animal is a primate
 ```{r}
 ggplot(sleep, aes(x=TotalSleep)) +
   geom_histogram() +
+  xlab("Total sleep (hours per day)")+
+  ggtitle("Variation in Total Time Sleeping")
+```
+
+Facet graph:
+
+```{r}
+ggplot(sleep
+       , aes(x=TotalSleep)) +
+  geom_histogram() +
+  xlab("Total sleep (hours per day)")+
+  ggtitle("Variation in Total Time Sleeping")+ 
+  facet_wrap(~Taxa)
+```
+
+Data for primates:
+
+```{r}
+ggplot(sleep[sleep$Taxa == "Primate",]
+       , aes(x=TotalSleep)) +
+  geom_histogram() +
+  xlab("Total sleep (hours per day)")+
   ggtitle("Variation in Total Time Sleeping")
 ```
 
