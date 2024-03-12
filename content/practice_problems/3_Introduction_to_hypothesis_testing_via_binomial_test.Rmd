@@ -81,19 +81,67 @@ Null hypothesis: People don't prefer one ear or another.
 
 Alternative hypothesis: People prefer the right ear to their left ear
 
-\* calculate a test statistic (signal) for this data \* Make you
-understand how to construct a null distribution + using
-sampling/simulation (code or written explanation) + by using an
-appropriate distribution (code or written explanation)
+\* calculate a test statistic (signal) for this data
 
-\* Calculate and compare p-values obtained using + simulation
-(calculation won’t be required on test, but make sure you understand!)
-(code or written explanation) + equations for binomial distribution
-(code or written explanation) + R functions (required)(code)
+```{r}
+19/25
+```
+
+\* Make you understand how to construct a null distribution + using
+sampling/simulation (code or written explanation)
+
+```{r}
+sampling_experiment = rbinom(10000, 25, .5)
+hist(sampling_experiment, breaks = 0:25, xlab = "# of Right-eared people out of 25", ylab = "Probability of being drawn \n from population of p = 0.5")
+```
+
+\+ by using an appropriate distribution (code or written explanation)
+
+```{r}
+using_distribution <- dbinom(0:25,25,.5)
+using_distribution
+
+```
+
+```{r}
+Number_righteared = c(0:25)
+pdf = data.frame(Number_righteared, using_distribution)
+plot(0:25, using_distribution)
+```
+
+\* Calculate and compare p-values obtained using
+
+\+ simulation (calculation won’t be required on test, but make sure you
+understand!) (code or written explanation)
+
+```{r}
+length(sampling_experiment[sampling_experiment >= 19 | sampling_experiment <= 6])/length(sampling_experiment)
+```
+
+\+ equations for binomial distribution (code or written explanation)
+
+```{r}
+dbinom(18,25,.5)
+```
+
+\+ R functions (required)(code)
+
+```{r}
+binom.test(x=19, n=25, p=.5)
+```
 
 \* Calculate a 95% confidence interval for the proportion of people who
-are right-eared \* How do your 95% confidence interval and hypothesis
-test compare?
+are right-eared
+
+```{r}
+library(binom)
+binom.confint(19,25)
+```
+
+\* How do your 95% confidence interval and hypothesis test compare?
+
+95% confidence interval is 0.562-0.888. Reject null hypothesis because
+the p values are less than 0.05
 
 ### 2
 
