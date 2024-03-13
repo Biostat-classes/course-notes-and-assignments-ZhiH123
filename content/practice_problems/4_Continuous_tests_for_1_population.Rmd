@@ -216,9 +216,38 @@ introduction to R!
 
 Yields of 10 strawberry plants in a uniformity trial are given by Baker
 and Baker (1953) as 239, 176, 235, 217, 234, 216, 318, 190, 181, and 225
-g. Test the hypothesis that µ = 205 \* Assuming variance = 1500 \*
-Estimating the variance from the data \* Using rank transform analysis
+g. Test the hypothesis that µ = 205 \* Assuming variance = 1500
+
+```{r}
+Strawberry <- c(239, 176, 235, 217, 234, 216, 318, 190, 181, 225)
+z.test(x=Strawberry, mu = 205, sigma.x=sqrt(1500))
+```
+
+Null hypothesis isn't rejected
+
+\* Estimating the variance from the data
+
+```{r}
+t.test(x=Strawberry, mu = 205)
+```
+
+Null hypothesis isn't rejected
+
+\* Using rank transform analysis
+
+```{r}
+wilcox.test(x=Strawberry, mu=205)
+```
+
+Null hypothesis isn't rejected
+
 \* Using binary transform analysis
+
+```{r}
+SIGN.test(x=Strawberry, md = 205)
+```
+
+Null hypothesis isn't rejected
 
 #### 5
 
