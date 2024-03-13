@@ -168,9 +168,38 @@ Cochran (1954). Based on five estimates, they were 183.2, 149.0, 154.0,
 of the estimates is 161 flies.
 
 -   Assuming variance = 275
+
+    ```{r}
+    flies <- c(183.2, 149.0, 154.0, 167.2, 187.2, 158.0, 143.0 )
+    library(BSDA)
+    z.test(x=flies, mu = 161, sigma.x=sqrt(275))
+    ```
+
+    Null hypothesis isn't rejected
+
 -   Estimating the variance from the data
+
+    ```{r}
+    t.test(x=flies, mu = 161)
+    ```
+
+    -   Null hypothesis isn't rejected
+
 -   Using rank transform analysis
+
+    ```{r}
+    wilcox.test(x=flies, mu=161)
+    ```
+
+    Null hypothesis isn't rejected
+
 -   Using binary transform analysis
+
+    ```{r}
+    SIGN.test(x=flies, md = 161)
+    ```
+
+Null hypothesis also isn't rejected.
 
 Note there are several ways to load the data! You can make a list (since
 the list is short):
