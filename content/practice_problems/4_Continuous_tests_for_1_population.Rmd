@@ -255,8 +255,23 @@ Evolutionary geneticists predicts the family sex ratio will be 80%
 female in broods of eagles that successfully fledge \>3 young. Nests
 that fledge 3 or more chicks are very rare but a sample of 30 chicks are
 obtained from such nests and they yield 25 females and 5 males. Test the
-hypotheses that that: \* a) the sex ratio is 50% females \* b) the sex
-ratio is 80% females.
+hypotheses that that:
+
+\* a) the sex ratio is 50% females
+
+```{r}
+binom.test(25,30,p=0.5)
+```
+
+Null hypothesis is rejected
+
+\* b) the sex ratio is 80% females.
+
+```{r}
+binom.test(25,30,p=0.8)
+```
+
+Null hypothesis is not rejected
 
 #### 6
 
