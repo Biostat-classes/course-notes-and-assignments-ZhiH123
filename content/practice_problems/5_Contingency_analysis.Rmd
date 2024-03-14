@@ -222,6 +222,20 @@ rejected.
 For people that have a heart attack before they turn 30, is survival
 independent of gender?
 
+```{r}
+chisq.test(table(heart_attacks[heart_attacks$AGE < 30, "SEX"], 
+                 heart_attacks[heart_attacks$AGE <30, "DIED"]))
+
+
+```
+
+```{r}
+fisher.test(table(heart_attacks[heart_attacks$AGE < 30, "SEX"], 
+                 heart_attacks[heart_attacks$AGE <30, "DIED"]))
+```
+
+Survival is independent of gender
+
 ### Dolphins
 
 #### 4
